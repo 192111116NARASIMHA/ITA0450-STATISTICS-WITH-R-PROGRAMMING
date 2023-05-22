@@ -1,0 +1,213 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang2057{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\*\generator Riched20 10.0.22621}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\b\f0\fs24\lang9 1. Write a R program to take input from the user (name and age) and display the \par
+values. Also print the version of R installation. \par
+\ul PROGRAM:\ulnone\par
+\b0\fs22 name = readline(prompt = "enter the name")\par
+age =  readline(prompt = "enter the age")\par
+print(paste("My name is",name , "and I am",age ,"years old."))\par
+print(R.version.string)\par
+\b\fs24 2. Write a R program to get the details of the objects in memory.\par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 name="narasimha"\par
+age=20\par
+rn=25\par
+nums =c(10,20,30,40)\par
+print(ls())\par
+print("details in memory are:")\par
+print(ls.str())\b\par
+\fs24 3. Write a R program to create a sequence of numbers from 20 to 50 and find the \par
+mean of numbers from 20 to 60 and sum of numbers from 51 to 91. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 v1<-seq(20,60)\par
+v2<-seq(51,91)\par
+cat("the sequence (20:60) is:\\n",v1,"\\n the mean of sequence(20:60) is")\par
+print(mean(v1))\par
+cat("\\n the sequence (51:91) is:\\n",v2,"\\n the sum of sequence(51:91) is")\par
+print(sum(v2))\b\fs24\par
+4. Write a R program to create a vector which contains 10 random integer values \par
+between -50 and +50.\par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 v<-sample(-50:50,10)\par
+print("the random variable in vector of (-50:50) is ")\par
+print(v)\b\fs24\par
+5. Write a R program to get the first 10 Fibonacci numbers.\par
+\ul PROGRAM:\par
+\ulnone\b0\fs22\par
+recur_fibo <- function(n) \{\par
+  if(n <= 1) \{\par
+    return(n)\par
+  \} else \{\par
+    return(recur_fibo(n-1) + recur_fibo(n-2))\par
+  \}\par
+\}\par
+nt = as.integer(readline(prompt="How many terms? "))\par
+if(nt <= 0) \{\par
+  print("Plese enter a positive integer")\par
+\} else \{\par
+  print("Fibonacci sequence:")\par
+  for(i in 0:(nt-1)) \{\par
+    print(recur_fibo(i))\par
+  \}\par
+\}\b\fs24\par
+6. Write a R program to get all prime numbers up to a given number (based on \par
+the sieve of Eratosthenes).\par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 prime_numbers <- function(n) \{\par
+  if (n >= 2) \{\par
+    x = seq(2, n)\par
+    prime_nums = c()\par
+    for (i in seq(2, n)) \{\par
+      if (any(x == i)) \{\par
+        prime_nums = c(prime_nums, i)\par
+        x = c(x[(x %% i) != 0], i)\par
+      \}\par
+    \}\par
+    return(prime_nums)\par
+  \}\par
+  else \par
+  \{\par
+    stop("Input number should be at least 2.")\par
+  \}\par
+\} \par
+prime_numbers(12)\b\fs24\par
+7. Write a R program to print the numbers from 1 to 100 and print "Fizz" for \par
+multiples of 3, print "Buzz" for multiples of 5, and print "FizzBuzz" for multiples of \par
+both. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 for(i in 1:100)\{\par
+  if(i %% 3==0 & i%%5==0 )\{print("FIZZBUZZ")\}\par
+  else if(i %% 3==0)\{print("FIZZ")\}\par
+  else if(i %% 5==0)\{print("BUZZ")\}\par
+  else\{print(i)\}\par
+\}\b\fs24\par
+8. Write a R program to extract first 10 english letter in lower case and last 10 \par
+letters in upper case and extract letters between 22nd to 24th letters in upper case. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 print("First 10 letters in lower case:")\par
+t = head(letters, 10)\par
+print(t)\par
+print("Last 10 letters in upper case:")\par
+t = tail(LETTERS, 10)\par
+print(t)\par
+print("Letters between 22nd to 24th letters in upper case:")\par
+e = tail(LETTERS[22:24])\par
+print(e)\b\fs24\par
+9. Write a R program to find the factors of a given number. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 print_factors = function(n) \{\par
+  print(paste("The factors of",n,"are:"))\par
+  for(i in 1:n) \{\par
+    if((n %% i) == 0) \{\par
+      print(i)\par
+    \}\par
+  \}\par
+\}\par
+nt= as.integer(readline(prompt = "enter the number:"))\par
+print_factors(nt)\b\fs24\par
+10. Write a R program to find the maximum and the minimum value of a given \par
+vector. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 v<-c(10,112,5,6,3,10,4,22)\par
+m<-(max(v))\par
+n<-(min(v))\par
+cat("the minnum value of vector is :",m)\par
+cat("\\n the maximum value of vector is :",n)\b\fs24\par
+11. Write a R program to get the unique elements of a given string and unique \par
+numbers of vector. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 str1 = "The quick brown fox jumps over The lazy dog."\par
+print("Original vector(string)")\par
+print(str1)\par
+print("Unique elements of the said vector:")\par
+print(unique(tolower(str1)))\par
+nums = c(1, 2, 2, 3, 4, 4, 5, 6)\par
+print("Original vector(number)")\par
+print(nums)\par
+print("Unique elements of the said vector:")\par
+print(unique(nums))\b\fs24\par
+12. Write a R program to create three vectors a,b,c with 3 integers. Combine the \par
+three vectors to become a 3\'d73 matrix where each column represents a vector. \par
+Print the content of the matrix. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 a<-c(10,20,30)\par
+b<-c(40,50,60)\par
+c<-c(70,80,90)\par
+m<-cbind(a,b,c)\par
+print("the matrix of combined vectorsis:")\par
+print(m)\b\fs24\par
+13. Write a R program to create a list of random numbers in normal distribution \par
+and count occurrences of each value. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 n = floor(rnorm(1000, 50, 100))\par
+print('List of random numbers in normal distribution:')\par
+print(n)\par
+t = table(n)\par
+print("Count occurrences of each value:")\par
+print(t)\b\fs24\par
+14. Write a R program to read the .csv file and display the content. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 movie_data = read.csv(file="movies.csv", header=TRUE, sep=",")\par
+print("Content of the .csv file:")\par
+print(movie_data)\par
+\b\fs24 15. Write a R program to create three vectors numeric data, character data and \par
+logical data. Display the content of the vectors and their type. \par
+\ul PROGRAM:\par
+\b0\fs22 a = c(1, 2, 5, 3, 4, 0, -1, 10)\par
+b = c("tony", "stark", "horward")\par
+c = c(TRUE, TRUE, TRUE, FALSE, TRUE, FALSE)\par
+print(a)\par
+print(typeof(a))\par
+print(b)\par
+print(typeof(b))\par
+print(c)\par
+print(typeof(c))\ulnone\b\fs24\par
+16. Write a R program to create a 5 x 4 matrix , 3 x 3 matrix with labels and fill \par
+the matrix by rows and 2 \'d7 2 matrix with labels and fill the matrix by columns. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 m1 = matrix(1:20, nrow=5, ncol=4)\par
+print("5 \'d7 4 matrix:")\par
+print(m1)\par
+cells = c(1,3,5,7,8,9,11,12,14)\par
+rnames = c("Row1", "Row2", "Row3")\par
+cnames = c("Col1", "Col2", "Col3")\par
+m2 = matrix(cells, nrow=3, ncol=3, byrow=TRUE, dimnames=list(rnames, cnames))\par
+print("3 \'d7 3 matrix with labels, filled by rows: ")\par
+print(m2)\par
+print("3 \'d7 3 matrix with labels, filled by columns: ")\par
+m3 = matrix(cells, nrow=3, ncol=3, byrow=FALSE, dimnames=list(rnames, cnames))\par
+print(m3)\par
+\b\fs24 17. Write a R program to create an array, passing in a vector of values and a \par
+vector of dimensions. Also provide names for each dimension. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 c1<-c("Col1", "Col2", "Col3", "Col4")\par
+c2<-c("Row1", "Row2", "Row3")\par
+c3<-c("Part1", "Part2")\par
+a =  array(6:30,dim = c(4, 3, 2),dimnames = list(c1,c2,c3))\par
+print(a)\b\fs24\par
+18. Write a R program to create an array with three columns, three rows, and two \par
+"tables", taking two vectors as input to the array. Print the array. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 v1 = c(10,15,12,5)\par
+v2 = c(25, 4, 36, 18, 10)\par
+arra1 = array(c(v1, v2),dim = c(3,3,2))\par
+print(arra1)\b\fs24\par
+19. Write a R program to create a list of elements using vectors, matrices and a \par
+functions. Print the content of the list. \par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 l = list(\par
+  c(1, 2, 2, 5, 7, 12),  \par
+  month.abb,\par
+  matrix(c(3, -8, 1, -3), nrow = 2),\par
+  asin\par
+)\par
+print("Content of the list:")\par
+print(l)\b\fs24\par
+20. Write a R program to draw an empty plot and an empty plot specify the axes \par
+limits of the graphic\par
+\ul PROGRAM:\par
+\ulnone\b0\fs22 plot.new()\par
+plot(1,type = "n",xlab = "",ylab = "", xlim = c(0, 5), ylim = c(0, 5))\par
+\b\fs24\par
+}
+ 
